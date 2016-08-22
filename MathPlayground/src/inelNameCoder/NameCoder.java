@@ -11,6 +11,7 @@ public class NameCoder {
 			"r", "s", "t", "u", "v", "w", "x", 
 			"y", "z" };
 	
+	
 	static String[] nameLetters;
 	
 	public static void main(String[] args){
