@@ -15,6 +15,14 @@ public class MainClass {
 		
 		radius = in.nextDouble();
 		
+		area = PI * radius * radius;
+		circunference = PI * radius * 2;
+		
+		System.out.println("El area del circulo es : " + area);
+		System.out.println("La circunferencia del circulo es: " + circunference);
+		
+		in.close();
+		
 		
 	}
 
