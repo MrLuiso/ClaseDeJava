@@ -11,7 +11,11 @@ public class MainClass {
 		double radius;
 		
 		System.out.println("De el radio del circulo:");
-		Scanner in = ;
+		Scanner in = new Scanner(System.in);
+		
+		radius = in.nextDouble();
+		
+		
 	}
 
 }
