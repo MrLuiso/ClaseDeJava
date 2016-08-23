@@ -8,6 +8,10 @@ public class MainClass {
 		
 		JFrame frame = new JFrame();
 		
+		MyComponent theComponent = new MyComponent();
+		
+		frame.add(theComponent);
+		
 		frame.setSize(300, 400);
 		frame.setTitle("Java Gurus");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
