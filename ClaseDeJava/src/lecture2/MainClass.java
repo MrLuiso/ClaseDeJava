@@ -12,8 +12,11 @@ public class MainClass {
 		
 		Car myCar = new Car();
 		
+		
 		frame.add(theComponent);
 		frame.add(myCar);
+		
+		
 		
 		frame.setSize(300, 400);
 		frame.setTitle("Java Gurus");
