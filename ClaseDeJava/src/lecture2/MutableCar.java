@@ -1,4 +1,5 @@
 package lecture2;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
@@ -10,6 +11,7 @@ public class MutableCar {
 	
 	private double xPos = 0;
 	private double yPos = 0;
+	private Color color;
 	
 	public MutableCar(double x, double y){
 		
@@ -18,13 +20,35 @@ public class MutableCar {
 		
 	}
 	
+	public MutableCar(double x , double y, Color c){
+		xPos = x;
+		yPos = y;
+		color = c;
+	}
+	
 	public void setPosition(double x, double y){
 		xPos = x;
 		yPos = y;
 	}
+	
+	public void setColor(Color color){
+		this.color = color;
+	}
+	
+	public double getXPos(){
+		return xPos;
+	}
+	
+	public double getYPos(){
+		return yPos;
+	}
 
+	public Color getColor(){
+		return color;
+	}
 
 	public void draw(Graphics g){
+		
 		
 		Point2D.Double rearWindowStart = new Point2D.Double(this.xPos + 10, this.yPos + 10);
 		Point2D.Double rearWindowEnd = new Point2D.Double(this.xPos + 20, this.yPos + 0);
@@ -51,7 +75,12 @@ public class MutableCar {
 		
 		g2.draw(frontTire);
 		g2.draw(rearTire);
+		
+		g2.setColor(this.getColor());
+		
 		g2.draw(body);
+		
+		g2.setColor(Color.BLACK);
 		
 		g2.draw(rearWindow);
 		g2.draw(frontWindow);
