@@ -78,7 +78,7 @@ public class MutableCar {
 		
 		g2.setColor(this.getColor());
 		
-		g2.draw(body);
+		g2.fill(body);
 		
 		g2.setColor(Color.BLACK);
 		
