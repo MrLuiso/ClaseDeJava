@@ -2,6 +2,8 @@ package lecture2;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Random;
+
 import javax.swing.JComponent;
 
 public class MyComponent extends JComponent {
@@ -26,7 +28,11 @@ public class MyComponent extends JComponent {
 		firstCar.setPosition(0,0);
 		firstCar.draw(g);
 		
+		Random r = new Random();
 		
+		firstCar.setPosition(r.nextInt(getWidth()), r.nextInt(getHeight()));
+		firstCar.setColor(Color.MAGENTA);
+		firstCar.draw(g);
 		
 	}
 }

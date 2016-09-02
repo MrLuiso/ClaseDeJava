@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 
 public class MainClass {
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws InterruptedException{
 		
 		JFrame frame = new JFrame();
 		
@@ -20,8 +20,12 @@ public class MainClass {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		
+		while(true){
+			frame.repaint();
+			Thread.sleep(1000);
+		}
 		
 		
-	}
-
-}
+	}//main
+	
+}//class

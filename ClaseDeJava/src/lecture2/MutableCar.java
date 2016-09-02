@@ -1,4 +1,5 @@
 package lecture2;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -73,8 +74,8 @@ public class MutableCar {
 		
 		Graphics2D g2 = (Graphics2D) g;
 		
-		g2.draw(frontTire);
-		g2.draw(rearTire);
+		g2.fill(frontTire);
+		g2.fill(rearTire);
 		
 		g2.setColor(this.getColor());
 		
