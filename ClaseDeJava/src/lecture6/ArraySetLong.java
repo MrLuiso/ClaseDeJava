@@ -132,13 +132,28 @@ public class ArraySetLong {
 	
 	public void addMember(long key){
 		
-		if(theElements.length <= numElements){
-			theElements = Arrays.copyOf(theElements, numElements * 2);
-		} 
+		if(!isMember(key)){
+			if(theElements.length <= numElements){
+				theElements = Arrays.copyOf(theElements, numElements * 2);
+			} 
+				
+			theElements[numElements] = key;
+			numElements++;
+		}
+		
 			
-		theElements[numElements] = key;
-		numElements++;
-			
+	}
+	
+	public void deleteMember(long key){
+		
+		
+		for(int i = 0; i < numElements; i++){
+			if(theElements[i] == key){
+				theElements[i] = theElements[numElements - 1];
+				numElements--;
+				return;
+			}
+		}		
 	}
 	
 	
