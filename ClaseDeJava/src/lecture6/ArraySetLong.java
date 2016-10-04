@@ -201,4 +201,8 @@ public class ArraySetLong {
 		return true;
 	}
 	
+	public boolean equals(ArraySetLong s) { 
+		return ((this.isSubset(s)) && (s.isSubset(this)));
+	}
+	
 }

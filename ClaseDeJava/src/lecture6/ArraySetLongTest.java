@@ -73,9 +73,13 @@ public class ArraySetLongTest {
 	}
 	
 	@Test
-	public void isSubset(){
+	public void testIsSubset(){
 		assertTrue("testIsSubset: subset incorrectly false", s.isSubset(s));
-		
+	}
+	
+	@Test
+	public void testEquals(){
+		assertTrue("testEquals: equals incorrectly flase", s.equals(s));
 	}
 
 }
