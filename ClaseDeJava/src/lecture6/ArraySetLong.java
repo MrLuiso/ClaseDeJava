@@ -157,4 +157,20 @@ public class ArraySetLong {
 	}
 	
 	
+	public ArraySetLong union(ArraySetLong s){
+		
+		int resultSize = Math.max(this.cardinality() + s.cardinality(), 10);
+		ArraySetLong result = new ArraySetLong(resultSize);
+		
+		for(int i = 0; i < this.cardinality(); i++){
+			result.addMember(this.theElements[i]);
+		}
+		
+		for(int i = 0; i < s.cardinality(); i++){
+			result.addMember(s.theElements[i]);
+		}
+		
+		return result;
+	}
+	
 }
