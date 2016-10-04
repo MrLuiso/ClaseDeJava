@@ -173,4 +173,21 @@ public class ArraySetLong {
 		return result;
 	}
 	
+	
+	public ArraySetLong intersection(ArraySetLong s){
+		
+		int resultSize = Math.max(this.cardinality(), s.cardinality());
+		ArraySetLong result = new ArraySetLong(resultSize);
+		
+		for(int i = 0; i < this.cardinality(); i++){
+			
+			if(s.isMember(this.theElements[i])){
+				result.addMember(this.theElements[i]);
+			}
+			
+		}
+		
+		return result;
+	}
+	
 }

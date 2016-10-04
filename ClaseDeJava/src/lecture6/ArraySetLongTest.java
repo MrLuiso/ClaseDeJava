@@ -61,5 +61,11 @@ public class ArraySetLongTest {
 		ArraySetLong result3 = emptySet.union(emptySet);
 		assertEquals("testUnion: Wrong cardinality", result3.cardinality(), 0);
 	}
+	
+	@Test
+	public void testIntersection() {
+		ArraySetLong result = s.intersection(emptySet);
+		assertEquals("testIntersection: Wrong cardinality", result.cardinality(), 0);
+	}
 
 }
