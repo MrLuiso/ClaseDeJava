@@ -53,8 +53,13 @@ public class ArraySetLongTest {
 	@Test
 	public void testUnion() {
 		ArraySetLong result = s.union(s2);
+		assertEquals("testUnion: wrong cardinality", result.cardinality(), 10);
 		
-		assertTrue("union() did not work", result.cardinality() == 10);
+		ArraySetLong result2 = s.union(s);
+		assertEquals("testUnion: Wrong cardinality", result2.cardinality(), 5);
+		
+		ArraySetLong result3 = emptySet.union(emptySet);
+		assertEquals("testUnion: Wrong cardinality", result3.cardinality(), 0);
 	}
 
 }
