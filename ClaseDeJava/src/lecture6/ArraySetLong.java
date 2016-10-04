@@ -190,4 +190,15 @@ public class ArraySetLong {
 		return result;
 	}
 	
+	public boolean isSubset(ArraySetLong s){
+		
+		for(int i = 0; i < this.cardinality(); i++){
+			if(!s.isMember(this.theElements[i])){
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
 }

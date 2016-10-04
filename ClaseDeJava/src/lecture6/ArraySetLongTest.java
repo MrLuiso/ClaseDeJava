@@ -6,8 +6,12 @@ public class ArraySetLongTest {
 	
 	long[] a = {1,2,3,4,5};
 	ArraySetLong s = new ArraySetLong(a, 5);
+	
 	long[] b = {6,7,8,9,10};
 	ArraySetLong s2 = new ArraySetLong(b, 5);
+	
+	long[] c = {1, 2, 3, 4, 5, 6 ,7, 8, 9, 10};
+	ArraySetLong s3 = new ArraySetLong(c, 5);
 	
 	ArraySetLong emptySet = new ArraySetLong(10);
 
@@ -66,6 +70,12 @@ public class ArraySetLongTest {
 	public void testIntersection() {
 		ArraySetLong result = s.intersection(emptySet);
 		assertEquals("testIntersection: Wrong cardinality", result.cardinality(), 0);
+	}
+	
+	@Test
+	public void isSubset(){
+		assertTrue("testIsSubset: subset incorrectly false", s.isSubset(s));
+		
 	}
 
 }
