@@ -4,6 +4,10 @@ public class StringElementType extends ElementType {
 	
 	private String theString;
 	
+	public StringElementType(String s){
+		this.theString = s;
+	}
+	
 	public boolean greaterThan(ElementType e){
 		StringElementType eString = (StringElementType) e;
 		
