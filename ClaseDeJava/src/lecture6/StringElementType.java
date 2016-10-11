@@ -18,7 +18,7 @@ public class StringElementType extends ElementType {
 		
 		StringElementType eString = (StringElementType) e;
 		
-		return (this.theString.equals(eString));
+		return (this.theString.equals(eString.theString));
 	}
 
 }
