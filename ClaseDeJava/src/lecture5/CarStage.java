@@ -1,4 +1,5 @@
 package lecture5;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
@@ -11,7 +12,7 @@ public class CarStage extends JComponent {
 
 	static int counter = 0;
 	
-	MutableCar[] cars;
+	Vehicle[] vehicles;
 
 	boolean onAWall = false;
 
@@ -25,10 +26,10 @@ public class CarStage extends JComponent {
 		int laneHeight = 50;
 		int numberOfLanes = Math.round( height / laneHeight);
 		
-		cars = new MutableCar[numberOfLanes];
+		vehicles = new Vehicle[numberOfLanes];
 		int nextYPos = 0;
 		for(int i = 0; i < numberOfLanes; i++){
-			cars[i] = new MutableCar(0, nextYPos, Color.ORANGE, 10, 1, i);
+			vehicles[i] = new MutableCar(0, nextYPos, Color.ORANGE, 10, 1, i);
 			nextYPos += laneHeight;
 			
 		}
@@ -39,14 +40,14 @@ public class CarStage extends JComponent {
 	public void paintComponent (Graphics g) {
 
 		
-		for(MutableCar car : cars){
-			car.draw(g);
+		for(Vehicle vehicle : vehicles){
+			vehicle.draw(g);
 			
-			int deltaX = randomNumbers.nextInt(car.getHorizontalSpeed());
-			car.moveInX(deltaX);
-			if(car.getXPos() + 60 >= this.getWidth()){
+			int deltaX = randomNumbers.nextInt(vehicle.getHorizontalSpeed());
+			vehicle.moveInX(deltaX);
+			if(vehicle.getXPos() + 60 >= this.getWidth()){
 				//car hits wall
-				car.setPosition(this.getWidth() - 60, car.getYPos());
+				vehicle.setPosition(this.getWidth() - 60, vehicle.getYPos());
 				someCarWon = true;
 			}
 		}
