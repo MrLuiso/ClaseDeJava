@@ -4,7 +4,15 @@ import org.junit.Test;
 
 public class ArraySetTest {
 	
-	LongElementType[] a = {
+	ElementType[] stringArray = {
+			new StringElementType("Hello"),
+			new StringElementType("World"),
+			new StringElementType("!")
+	};
+	
+	ArraySet stringSet = new ArraySet(stringArray, 3);
+	
+	ElementType[] a = {
 			new LongElementType(1),
 			new LongElementType(2),
 			new LongElementType(3),
@@ -13,7 +21,7 @@ public class ArraySetTest {
 			};
 	ArraySet s = new ArraySet(a, 5);
 	
-	LongElementType[] b = {
+	ElementType[] b = {
 			new LongElementType(6),
 			new LongElementType(7),
 			new LongElementType(8),
@@ -22,7 +30,7 @@ public class ArraySetTest {
 			};
 	ArraySet s2 = new ArraySet(b, 5);
 	
-	LongElementType[] c = {
+	ElementType[] c = {
 			new LongElementType(1),
 			new LongElementType(2),
 			new LongElementType(3),
@@ -68,6 +76,12 @@ public class ArraySetTest {
 	@Test
 	public void testProduct() {
 		assertEquals("product(): Wrong product returned", s.product(),120);
+	}
+	
+	@Test
+	public void testIsMemberWithStrings() {
+		assertTrue("isMember(): Did not find member", stringSet.isMember(new StringElementType("Hello")));
+		assertFalse("isMember(): Found non existant member", stringSet.isMember(new StringElementType("ICOM4015")));
 	}
 	
 	@Test
