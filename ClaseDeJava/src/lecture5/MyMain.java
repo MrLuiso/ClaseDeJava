@@ -18,7 +18,12 @@ public class MyMain {
 		Vehicle[] theVehicles = new Vehicle[10];
 		
 		for(int i = 0; i < theVehicles.length; i++){
-			theVehicles[i] = new MutableCar(0, 0, Color.BLUE, 10, 1, i);
+			if(i % 2 == 0){
+				theVehicles[i] = new Truck(0, 0, Color.BLUE, 10, 1, i);
+			} else {
+				theVehicles[i] = new MutableCar(0, 0, Color.BLUE, 10, 1, i);
+			}
+			
 		}
 		
 		CarStage theComponent = new CarStage(windowHeight, theVehicles);

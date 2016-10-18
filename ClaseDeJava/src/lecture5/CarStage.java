@@ -1,5 +1,4 @@
 package lecture5;
-import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
 
@@ -22,8 +21,6 @@ public class CarStage extends JComponent {
 	int height = this.getHeight();
 	
 	public CarStage(int height, Vehicle[] vehicles) {
-		int laneHeight = 50;
-		int numberOfLanes = Math.round( height / laneHeight);
 		
 		this.vehicles = new Vehicle[vehicles.length];
 		
@@ -34,7 +31,7 @@ public class CarStage extends JComponent {
 			
 			this.vehicles[i] = vehicles[i];
 			
-			nextYPos += laneHeight;
+			nextYPos += vehicles[i].getHeight() + 20;
 			
 		}
 	}//Constructor

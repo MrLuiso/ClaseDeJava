@@ -64,6 +64,8 @@ public abstract class Vehicle {
 	public void moveInY(double deltaY){
 		this.yPos += deltaY;
 	}
+	
+	public abstract int getHeight();
 
 	public abstract void draw(Graphics g);
 	
