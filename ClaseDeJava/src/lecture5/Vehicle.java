@@ -2,7 +2,6 @@ package lecture5;
 import java.awt.Color;
 import java.awt.Graphics;
 
-
 public abstract class Vehicle {
 
 	private double xPos = 0;

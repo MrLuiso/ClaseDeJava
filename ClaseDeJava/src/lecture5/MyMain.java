@@ -1,4 +1,6 @@
 package lecture5;
+import java.awt.Color;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -13,7 +15,13 @@ public class MyMain {
 		
 		frame.setSize(windowWidth, windowHeight);
 		
-		CarStage theComponent = new CarStage(windowHeight);
+		Vehicle[] theVehicles = new Vehicle[10];
+		
+		for(int i = 0; i < theVehicles.length; i++){
+			theVehicles[i] = new MutableCar(0, 0, Color.BLUE, 10, 1, i);
+		}
+		
+		CarStage theComponent = new CarStage(windowHeight, theVehicles);
 		frame.add(theComponent);
 		
 		frame.setTitle("CIIC 4010 / ICOM 4015 Developers");	

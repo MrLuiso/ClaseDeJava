@@ -1,5 +1,4 @@
 package lecture5;
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
@@ -22,14 +21,19 @@ public class CarStage extends JComponent {
 	
 	int height = this.getHeight();
 	
-	public CarStage(int height) {
+	public CarStage(int height, Vehicle[] vehicles) {
 		int laneHeight = 50;
 		int numberOfLanes = Math.round( height / laneHeight);
 		
-		vehicles = new Vehicle[numberOfLanes];
+		this.vehicles = new Vehicle[vehicles.length];
+		
 		int nextYPos = 0;
-		for(int i = 0; i < numberOfLanes; i++){
-			vehicles[i] = new MutableCar(0, nextYPos, Color.ORANGE, 10, 1, i);
+		for(int i = 0; i < vehicles.length; i++){
+			
+			vehicles[i].setPosition(0, nextYPos);
+			
+			this.vehicles[i] = vehicles[i];
+			
 			nextYPos += laneHeight;
 			
 		}

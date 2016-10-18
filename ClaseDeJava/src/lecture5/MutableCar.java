@@ -16,12 +16,12 @@ public class MutableCar extends Vehicle {
 		this.setHorizontalDirection(1);  // Initially moving right
 	}
 
-	public MutableCar(double x, double y, Color color) {
-		this.setPosition(x, y);
-		this.setColor(color);
-		this.setHorizontalSpeed(10);
-		this.setHorizontalDirection(1);  // Initially moving right
-	}
+//	public MutableCar(double x, double y, Color color) {
+//		this.setPosition(x, y);
+//		this.setColor(color);
+//		this.setHorizontalSpeed(10);
+//		this.setHorizontalDirection(1);  // Initially moving right
+//	}
 
 	public MutableCar(double x, double y, Color color, int hSpeed, int hDir, int number) {
 		
