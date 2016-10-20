@@ -18,7 +18,10 @@ public class MyMain {
 		Vehicle[] theVehicles = new Vehicle[10];
 		
 		for(int i = 0; i < theVehicles.length; i++){
-			if(i % 2 == 0){
+			
+			if(i == 0){
+				theVehicles[i] = new PoliceCar(0, 0, Color.BLUE, 10, 1, i);
+			} else if(i % 2 == 0){
 				theVehicles[i] = new Truck(0, 0, Color.BLUE, 10, 1, i);
 			} else {
 				theVehicles[i] = new MutableCar(0, 0, Color.BLUE, 10, 1, i);
